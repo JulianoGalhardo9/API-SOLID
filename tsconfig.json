@@ -2,6 +2,10 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "target": "es2020",
     "lib": ["esnext"],
     "types": ["node"],
