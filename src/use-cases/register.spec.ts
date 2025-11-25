@@ -11,7 +11,7 @@ describe("Register Use Case", () => {
 
     const { user } = await registerUseCase.execute({
       name: "John Doe",
-      email: "jonhdoe@example.com",
+      email: "johndoe@example.com",
       password: "123456",
     });
 
@@ -24,7 +24,7 @@ describe("Register Use Case", () => {
 
     const { user } = await registerUseCase.execute({
       name: "John Doe",
-      email: "jonhdoe@example.com",
+      email: "johndoe@example.com",
       password: "123456",
     });
 
