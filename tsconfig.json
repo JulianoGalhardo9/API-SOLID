@@ -24,7 +24,10 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
 
   "include": ["src"]
