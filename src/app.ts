@@ -2,8 +2,13 @@ import fastify from "fastify";
 import { appRoutes } from "./http/routes";
 import { ZodError } from "zod";
 import { env } from "./env";
+import fastifyJwt from "@fastify/jwt";
 
 export const app = fastify();
+
+app.register(fastifyJwt, {
+  secret: env.JWT_SECRET,
+});
 
 app.register(appRoutes);
 
@@ -14,11 +19,11 @@ app.setErrorHandler((error, _, replay) => {
       .send({ message: "Validation error.", issues: error.format() });
   }
 
-  if(env.NODE_ENV === 'production') {
-    console.log(error)
-  } else{
+  if (env.NODE_ENV === "production") {
+    console.log(error);
+  } else {
     // TODO: here we should log to on external tool like DataDog/NewRelic/Sentry
   }
 
-  return replay.status(500).send({ message: 'Internal server error'})
+  return replay.status(500).send({ message: "Internal server error" });
 });
